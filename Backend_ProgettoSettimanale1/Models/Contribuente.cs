@@ -22,26 +22,28 @@
         }
 
         public decimal CalcoloImposta()
-        { 
+        {
             decimal imposta = 0;
 
-            switch (RedditoAnnuale)
+            if (RedditoAnnuale <= 15000)
             {
-                case <= 15000:
-                    imposta = RedditoAnnuale * 0.23m;
-                    break;
-                case <= 28000:
-                    imposta = 3450 + (RedditoAnnuale - 15000) * 0.27m;
-                    break;
-                case <= 55000:
-                    imposta = 6960 + (RedditoAnnuale - 28000) * 0.38m;
-                    break;
-                case <= 75000:
-                    imposta = 17220 + (RedditoAnnuale - 55000) * 0.41m;
-                    break;
-                default:
-                    imposta = 25420 + (RedditoAnnuale - 75000) * 0.43m;
-                    break;
+                imposta = RedditoAnnuale * 0.23m;
+            }
+            else if (RedditoAnnuale <= 28000)
+            {
+                imposta = 3450 + ((RedditoAnnuale - 15000) * 0.27m);
+            }
+            else if (RedditoAnnuale <= 55000)
+            {
+                imposta = 6960 + ((RedditoAnnuale - 28000) * 0.38m);
+            }
+            else if (RedditoAnnuale <= 75000)
+            {
+                imposta = 17220 + ((RedditoAnnuale - 55000) * 0.41m);
+            }
+            else
+            {
+                imposta = 25420 + ((RedditoAnnuale - 75000) * 0.43m);
             }
 
             return imposta;
