@@ -48,7 +48,8 @@
         }
         public override string ToString()
         {
-            return $"Contribuente: {Nome} {Cognome},\n" +
+            return $"Dati del contribuente:\n"+
+                   $"Contribuente: {Nome} {Cognome},\n" +
                    $"nato il {DataNascita:dd/MM/yyyy} ({Sesso}),\n" +
                    $"residente a {ComuneResidenza},\n" +
                    $"codice fiscale: {CodiceFiscale}\n\n" +
